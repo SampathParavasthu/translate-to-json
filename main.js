@@ -5,6 +5,7 @@ const app = EXPRESS();
 const CORS = require('cors');
 const PATH = require('path');
 const { env } = require('process');
+const LANGUAGES = require('./languages');
 
 const DIST = PATH.join(__dirname, '/client/dist');
 
@@ -19,14 +20,6 @@ const DEFAULT_LANGUAGE = {
   name: 'english'
 };
 
-const LANGUAGES = [
-  { code: 'es', name: 'spanish' },
-  { code: 'tl', name: 'filipino', alias: 'fil' },
-  { code: 'ms', name: 'malay' },
-  { code: 'vi', name: 'vietnamese' },
-  { code: 'zh-CN', name: 'chinese_simplified', alias: 'zh' },
-  { code: 'zh-TW', name: 'chinese_traditional', alias: 'zh-Hant' }
-];
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`APP is running successfully in ${process.env.PORT || 3000}`);
